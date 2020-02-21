@@ -14,7 +14,7 @@ namespace Quadratic_Equation_Solver
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnExitClick(object sender, RoutedEventArgs e)
         {
             Close();
         }

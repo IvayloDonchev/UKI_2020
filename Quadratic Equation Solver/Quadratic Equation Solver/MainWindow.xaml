@@ -36,7 +36,7 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="btnClear" Grid.Column="0" Click="btnClearClick" Margin="10">Изчисти</Button>
             <Button x:Name="btnCalc" Grid.Column="1" Click="btnCalcClick" Margin="10">Изчисли</Button>
-            <Button x:Name="btnExit" Grid.Column="2" Click="Button_Click" Margin="10">Изход</Button>
+            <Button x:Name="btnExit" Grid.Column="2" Click="btnExitClick" Margin="10">Изход</Button>
         </Grid>
     </Grid>
 </Window>
