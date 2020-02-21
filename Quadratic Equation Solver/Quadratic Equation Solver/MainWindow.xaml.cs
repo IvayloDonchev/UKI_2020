@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Quadratic_Equation_Solver
 {
@@ -42,8 +31,7 @@ namespace Quadratic_Equation_Solver
         private void btnCalcClick(object sender, RoutedEventArgs e)
         {
             double a, b, c, d;
-            if (boxA.Text == "")
-                boxA.Text = "0";
+            if (boxA.Text == "") boxA.Text = "0";
             try
             {
                 a = Double.Parse(boxA.Text);
@@ -51,15 +39,17 @@ namespace Quadratic_Equation_Solver
                 c = Double.Parse(boxC.Text);
                 d = b * b - 4 * a * c;
             }
-            catch(System.FormatException)
+            catch(System.FormatException ex)
             {
                 blockX1.Text = "Некоректно въведени данни!";
                 blockX1.Foreground = Brushes.Red;
-                blockX2.Text = "";
+                blockX2.Text = ex.Message;
+                blockX2.Foreground = Brushes.Blue;
                 return;
             }
             blockX1.Foreground = Brushes.Black;
-            if (a == 0.0)
+            blockX2.Foreground = Brushes.Black;
+            if (a == 0.0)       // Линейно уравнение
             {
                 double x = -c / b;
                 blockX1.Text = $"X = {x}";
@@ -67,7 +57,7 @@ namespace Quadratic_Equation_Solver
             }
             else
             {
-                if (d > 0)
+                if (d > 0)  // Два корена
                 {
                     double x1 = (-b + Math.Sqrt(d)) / (2 * a);
                     double x2 = (-b - Math.Sqrt(d)) / (2 * a);
@@ -75,13 +65,13 @@ namespace Quadratic_Equation_Solver
                     blockX2.Text = $"X2 = {x2}";
                 }
                 else
-                    if (d == 0)
+                    if (d == 0) // Един корен
                 {
                     double x = (-b) / (2 * a);
                     blockX1.Text = $"X = {x}";
                     blockX2.Text = "";
                 }
-                else
+                else          // Няма реални корени
                 {
                     blockX1.Text = "Уравнението няма реални корени";
                     blockX2.Text = "";

@@ -15,17 +15,16 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Center" Margin="10" HorizontalAlignment="Center">
             <TextBox x:Name="boxA" TextAlignment="Right" TextWrapping="Wrap" Width="50" />
             <TextBlock Text=" X" TextWrapping="Wrap"/>
-            <TextBlock>
-                <Run Typography.Variants="Superscript">2</Run>
+            <TextBlock FontSize="12" Text=" 2">
+                <Run Typography.Variants="Superscript"></Run>
             </TextBlock>
             <TextBlock Text=" + " TextWrapping="Wrap"/>
             <TextBox x:Name="boxB" TextAlignment="Right" TextWrapping="Wrap" Width="50"/>
-            <TextBlock Text=" X" TextWrapping="Wrap"/>
-            <TextBlock Text=" + " TextWrapping="Wrap"/>
+            <TextBlock Text=" X + " TextWrapping="Wrap"/>
             <TextBox x:Name="boxC" TextAlignment="Right" TextWrapping="Wrap" Width="50"/>
             <TextBlock Text=" = 0" TextWrapping="Wrap"/>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Center" Margin="50,0,10,0" HorizontalAlignment="Center">
+        <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Center" Margin="10" HorizontalAlignment="Center">
             <TextBlock x:Name="blockX1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Text=""/>
             <TextBlock x:Name="blockX2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,20" Text=""/>
         </StackPanel>
