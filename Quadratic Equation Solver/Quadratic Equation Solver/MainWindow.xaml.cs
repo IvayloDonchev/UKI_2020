@@ -42,6 +42,8 @@ namespace Quadratic_Equation_Solver
         private void btnCalcClick(object sender, RoutedEventArgs e)
         {
             double a, b, c, d;
+            if (boxA.Text == "")
+                boxA.Text = "0";
             try
             {
                 a = Double.Parse(boxA.Text);
@@ -52,9 +54,11 @@ namespace Quadratic_Equation_Solver
             catch(System.FormatException)
             {
                 blockX1.Text = "Некоректно въведени данни!";
+                blockX1.Foreground = Brushes.Red;
                 blockX2.Text = "";
                 return;
             }
+            blockX1.Foreground = Brushes.Black;
             if (a == 0.0)
             {
                 double x = -c / b;
