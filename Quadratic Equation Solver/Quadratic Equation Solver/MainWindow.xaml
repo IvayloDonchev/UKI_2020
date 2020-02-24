@@ -13,16 +13,16 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Center" Margin="10" HorizontalAlignment="Center">
-            <TextBox x:Name="boxA" TextAlignment="Right" TextWrapping="Wrap" Width="50" />
-            <TextBlock Text=" X" TextWrapping="Wrap"/>
+            <TextBox x:Name="boxA" TextAlignment="Right" Width="50" />
+            <TextBlock Text=" X" />
             <TextBlock FontSize="12" Text=" 2">
                 <Run Typography.Variants="Superscript"></Run>
             </TextBlock>
-            <TextBlock Text=" + " TextWrapping="Wrap"/>
-            <TextBox x:Name="boxB" TextAlignment="Right" TextWrapping="Wrap" Width="50"/>
-            <TextBlock Text=" X + " TextWrapping="Wrap"/>
-            <TextBox x:Name="boxC" TextAlignment="Right" TextWrapping="Wrap" Width="50"/>
-            <TextBlock Text=" = 0" TextWrapping="Wrap"/>
+            <TextBlock Text=" + " />
+            <TextBox x:Name="boxB" TextAlignment="Right" Width="50"/>
+            <TextBlock Text=" X + " />
+            <TextBox x:Name="boxC" TextAlignment="Right" Width="50"/>
+            <TextBlock Text=" = 0" />
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Center" Margin="10" HorizontalAlignment="Center">
             <TextBlock x:Name="blockX1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Text=""/>
