@@ -13,6 +13,7 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Button x:Name="BtnStart" Grid.Row="0" Margin="15" Click="BtnStart_Click">Начало</Button>
         <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15">
@@ -28,5 +29,6 @@
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15 0 0 15">Брой опити:</TextBlock>
             <TextBox x:Name="BoxCount" HorizontalAlignment="Center" Margin="10 0 0 15" Text=""  VerticalAlignment="Center" Width="120" TextAlignment="Right" />
         </StackPanel>
+        <Button x:Name="BtnExit" Grid.Row="5" Margin="15" Click="BtnExit_Click">Изход</Button>
     </Grid>
 </Window>
