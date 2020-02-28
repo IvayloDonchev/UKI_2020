@@ -8,8 +8,8 @@ namespace Guess_the_Number
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int compNum = 0, cnt = 0;
-
+        private static int compNum = 0, cnt = 0;
+        
         private void BtnStart_Click(object sender, RoutedEventArgs e)
         {
             Random r = new Random();
@@ -29,8 +29,9 @@ namespace Guess_the_Number
             {
                 myNumber = Convert.ToInt32(BoxNumber.Text);
             }
-            catch(FormatException)
+            catch(FormatException ex)
             {
+                _ = MessageBox.Show(ex.Message, "Грешка!", MessageBoxButton.OK, MessageBoxImage.Error);
                 BoxNumber.Focus();
                 BoxNumber.SelectAll();
                 return;
