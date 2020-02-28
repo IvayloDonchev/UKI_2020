@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Guess_the_Number"
         mc:Ignorable="d"
-        Title="Познай числото" Height="450" Width="450" FontSize="16">
+        Title="Познай числото" Height="450" Width="350" FontSize="16">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -17,17 +17,17 @@
         </Grid.RowDefinitions>
         <Button x:Name="BtnStart" Grid.Row="0" Margin="15" Click="BtnStart_Click">Начало</Button>
         <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15">
-            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0">Въведи число:</TextBlock>
-            <TextBox x:Name="BoxNumber" HorizontalAlignment="Right" Margin="5,0,0,0" Text=""  VerticalAlignment="Center" Width="120" TextAlignment="Right" />
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Въведи число:</TextBlock>
+            <TextBox x:Name="BoxNumber" HorizontalAlignment="Right" Margin="10,0,0,0" Text=""  VerticalAlignment="Center" Width="120" TextAlignment="Right" />
         </StackPanel>
         <Button x:Name="BtnTry" Grid.Row="2" Margin="15" Click="BtnTry_Click">Опит</Button>
         <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15 0 0 15">Отговор:</TextBlock>
-            <TextBox x:Name="BoxAnswer" HorizontalAlignment="Center" Margin="10 0 0 15" Text=""  VerticalAlignment="Center" Width="120" TextAlignment="Right" />
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Отговор:</TextBlock>
+            <TextBox x:Name="BoxAnswer" HorizontalAlignment="Center" Margin="10 0 0 0" Text=""  VerticalAlignment="Center" Width="120" TextAlignment="Right" IsReadOnly="True" />
         </StackPanel>
         <StackPanel Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15 0 0 15">Брой опити:</TextBlock>
-            <TextBox x:Name="BoxCount" HorizontalAlignment="Center" Margin="10 0 0 15" Text=""  VerticalAlignment="Center" Width="120" TextAlignment="Right" />
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Брой опити:</TextBlock>
+            <TextBox x:Name="BoxCount" HorizontalAlignment="Center" Margin="10 0 0 0" Text=""  VerticalAlignment="Center" Width="120" TextAlignment="Right" />
         </StackPanel>
         <Button x:Name="BtnExit" Grid.Row="5" Margin="15" Click="BtnExit_Click">Изход</Button>
     </Grid>
