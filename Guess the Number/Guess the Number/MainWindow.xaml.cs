@@ -20,6 +20,7 @@ namespace Guess_the_Number
             BoxNumber.Clear();
             BoxAnswer.Clear();
             BoxCount.Clear();
+            BoxNumber.Focus();
         }
 
         private void BtnTry_Click(object sender, RoutedEventArgs e)
