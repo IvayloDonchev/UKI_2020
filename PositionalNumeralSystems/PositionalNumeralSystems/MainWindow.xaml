@@ -1,0 +1,61 @@
+﻿<Window x:Name="mainWindow" x:Class="PositionalNumeralSystems.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PositionalNumeralSystems"
+        mc:Ignorable="d"
+        Title="Позиционни бройни системи" Height="275" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Десетична:" HorizontalAlignment="Right" Margin="10 0 0 0" />
+            <TextBox Grid.Column="1" x:Name="BoxDec" Text="0" Margin="10 0 10 0" />
+            <Button Grid.Column="2" x:Name="BtnFromDec" Content="Преобразувай" Margin="10 0 10 0"/>
+        </Grid>
+        <Grid Grid.Row="1" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Двоична:" HorizontalAlignment="Right" Margin="10 0 0 0" />
+            <TextBox Grid.Column="1" x:Name="BoxBin" Text="0" Margin="10 0 10 0"/>
+            <Button Grid.Column="2" x:Name="BtnFromBin" Content="Преобразувай" Margin="10 0 10 0"/>
+        </Grid>
+        <Grid Grid.Row="2" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Шестнадесетична:" HorizontalAlignment="Right" Margin="10 0 0 0" />
+            <TextBox Grid.Column="1" x:Name="BoxHex" Text="0" Margin="10 0 10 0"/>
+            <Button Grid.Column="2" x:Name="BtnFromHex" Content="Преобразувай" Margin="10 0 10 0"/>
+        </Grid>
+        <Grid Grid.Row="3" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Основа: " HorizontalAlignment="Right" Margin="10 0 0 0" />
+            <TextBox Grid.Column="1" x:Name="BoxBase" Text="8" MinWidth="25" HorizontalAlignment="Left" Margin="10 0 10 0"/>
+            <TextBox Grid.Column="2" x:Name="BoxCuston" Text="0"  Margin="10 0 10 0"/>
+            <Button Grid.Column="3" x:Name="BtnFromCustomBase" Content="Преобразувай" Margin="10 0 10 0" />
+        </Grid>
+        <Button x:Name="BtnExit" Grid.Row="4" Content="Изход" VerticalAlignment="Center" HorizontalAlignment="Right" MinWidth="50" Margin="0 0 10 0" Click="BtnExit_Click" />
+    </Grid>
+</Window>
