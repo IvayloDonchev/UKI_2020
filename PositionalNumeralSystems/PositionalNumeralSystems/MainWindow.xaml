@@ -64,6 +64,5 @@
             <Button x:Name="BtnClear" Grid.Column="0" Content="Изчисти" Margin="10 0 20 0" Click="BtnClear_Click" />
             <Button x:Name="BtnExit" Grid.Column="1" Content="Изход" Margin="20 0 10 0" Click="BtnExit_Click" />
         </Grid>
-
     </Grid>
 </Window>
