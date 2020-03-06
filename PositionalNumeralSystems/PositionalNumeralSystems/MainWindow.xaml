@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PositionalNumeralSystems"
         mc:Ignorable="d"
-        Title="Позиционни бройни системи" Height="275" Width="500" FontSize="14">
+        Title="Позиционни бройни системи" Height="300" Width="450" FontSize="14">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -14,49 +14,49 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" VerticalAlignment="Center">
+        <Grid Grid.Row="0" VerticalAlignment="Stretch" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="Десетична:" HorizontalAlignment="Right" Margin="10 0 0 0" />
-            <TextBox Grid.Column="1" x:Name="BoxDec" Text="0" Margin="10 0 10 0" />
+            <TextBlock Grid.Column="0" Text="Десетична:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10 0 0 0" />
+            <TextBox Grid.Column="1" x:Name="BoxDec" Text="0" VerticalContentAlignment="Center" Margin="10 0 10 0" />
             <Button Grid.Column="2" x:Name="BtnFromDec" Content="Преобразувай" Margin="10 0 10 0" Click="BtnFromDec_Click"/>
         </Grid>
-        <Grid Grid.Row="1" VerticalAlignment="Center">
+        <Grid Grid.Row="1" VerticalAlignment="Stretch" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="Двоична:" HorizontalAlignment="Right" Margin="10 0 0 0" />
-            <TextBox Grid.Column="1" x:Name="BoxBin" Text="0" Margin="10 0 10 0"/>
+            <TextBlock Grid.Column="0" Text="Двоична:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10 0 0 0" />
+            <TextBox Grid.Column="1" x:Name="BoxBin" Text="0" VerticalContentAlignment="Center" Margin="10 0 10 0"/>
             <Button Grid.Column="2" x:Name="BtnFromBin" Content="Преобразувай" Margin="10 0 10 0" Click="BtnFromBin_Click"/>
         </Grid>
-        <Grid Grid.Row="2" VerticalAlignment="Center">
+        <Grid Grid.Row="2" VerticalAlignment="Stretch" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="Шестнадесетична:" HorizontalAlignment="Right" Margin="10 0 0 0" />
-            <TextBox Grid.Column="1" x:Name="BoxHex" Text="0" Margin="10 0 10 0"/>
+            <TextBlock Grid.Column="0" Text="Шестнадесетична:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10 0 0 0" />
+            <TextBox Grid.Column="1" x:Name="BoxHex" Text="0" VerticalContentAlignment="Center" Margin="10 0 10 0"/>
             <Button Grid.Column="2" x:Name="BtnFromHex" Content="Преобразувай" Margin="10 0 10 0" Click="BtnFromHex_Click"/>
         </Grid>
-        <Grid Grid.Row="3" VerticalAlignment="Center">
+        <Grid Grid.Row="3" VerticalAlignment="Stretch" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="Основа: " HorizontalAlignment="Right" Margin="10 0 0 0" />
-            <TextBox Grid.Column="1" x:Name="BoxBase" Text="8" MinWidth="25" HorizontalAlignment="Left" Margin="10 0 10 0"/>
-            <TextBox Grid.Column="2" x:Name="BoxCustom" Text="0"  Margin="10 0 10 0"/>
+            <TextBlock Grid.Column="0" Text="Основа: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10 0 0 0" />
+            <TextBox Grid.Column="1" x:Name="BoxBase" Text="8" MinWidth="30" VerticalContentAlignment="Center" Margin="10,0,0,0" />
+            <TextBox Grid.Column="2" x:Name="BoxCustom" Text="0" VerticalContentAlignment="Center" Margin="10 0 10 0"/>
             <Button Grid.Column="3" x:Name="BtnFromCustomBase" Content="Преобразувай" Margin="10 0 10 0" Click="BtnFromCustomBase_Click" />
         </Grid>
-        <Grid Grid.Row="4" VerticalAlignment="Center">
+        <Grid Grid.Row="4" VerticalAlignment="Stretch" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
@@ -64,6 +64,6 @@
             <Button x:Name="BtnClear" Grid.Column="0" Content="Изчисти" Margin="10 0 20 0" Click="BtnClear_Click" />
             <Button x:Name="BtnExit" Grid.Column="1" Content="Изход" Margin="20 0 10 0" Click="BtnExit_Click" />
         </Grid>
-        
+
     </Grid>
 </Window>
