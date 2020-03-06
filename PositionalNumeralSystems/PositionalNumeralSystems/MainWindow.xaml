@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PositionalNumeralSystems"
         mc:Ignorable="d"
-        Title="Позиционни бройни системи" Height="275" Width="500">
+        Title="Позиционни бройни системи" Height="275" Width="500" FontSize="14">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -22,7 +22,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Десетична:" HorizontalAlignment="Right" Margin="10 0 0 0" />
             <TextBox Grid.Column="1" x:Name="BoxDec" Text="0" Margin="10 0 10 0" />
-            <Button Grid.Column="2" x:Name="BtnFromDec" Content="Преобразувай" Margin="10 0 10 0"/>
+            <Button Grid.Column="2" x:Name="BtnFromDec" Content="Преобразувай" Margin="10 0 10 0" Click="BtnFromDec_Click"/>
         </Grid>
         <Grid Grid.Row="1" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
@@ -32,7 +32,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Двоична:" HorizontalAlignment="Right" Margin="10 0 0 0" />
             <TextBox Grid.Column="1" x:Name="BoxBin" Text="0" Margin="10 0 10 0"/>
-            <Button Grid.Column="2" x:Name="BtnFromBin" Content="Преобразувай" Margin="10 0 10 0"/>
+            <Button Grid.Column="2" x:Name="BtnFromBin" Content="Преобразувай" Margin="10 0 10 0" Click="BtnFromBin_Click"/>
         </Grid>
         <Grid Grid.Row="2" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
@@ -42,7 +42,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Шестнадесетична:" HorizontalAlignment="Right" Margin="10 0 0 0" />
             <TextBox Grid.Column="1" x:Name="BoxHex" Text="0" Margin="10 0 10 0"/>
-            <Button Grid.Column="2" x:Name="BtnFromHex" Content="Преобразувай" Margin="10 0 10 0"/>
+            <Button Grid.Column="2" x:Name="BtnFromHex" Content="Преобразувай" Margin="10 0 10 0" Click="BtnFromHex_Click"/>
         </Grid>
         <Grid Grid.Row="3" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
@@ -53,9 +53,17 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Основа: " HorizontalAlignment="Right" Margin="10 0 0 0" />
             <TextBox Grid.Column="1" x:Name="BoxBase" Text="8" MinWidth="25" HorizontalAlignment="Left" Margin="10 0 10 0"/>
-            <TextBox Grid.Column="2" x:Name="BoxCuston" Text="0"  Margin="10 0 10 0"/>
-            <Button Grid.Column="3" x:Name="BtnFromCustomBase" Content="Преобразувай" Margin="10 0 10 0" />
+            <TextBox Grid.Column="2" x:Name="BoxCustom" Text="0"  Margin="10 0 10 0"/>
+            <Button Grid.Column="3" x:Name="BtnFromCustomBase" Content="Преобразувай" Margin="10 0 10 0" Click="BtnFromCustomBase_Click" />
         </Grid>
-        <Button x:Name="BtnExit" Grid.Row="4" Content="Изход" VerticalAlignment="Center" HorizontalAlignment="Right" MinWidth="50" Margin="0 0 10 0" Click="BtnExit_Click" />
+        <Grid Grid.Row="4" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BtnClear" Grid.Column="0" Content="Изчисти" Margin="10 0 20 0" Click="BtnClear_Click" />
+            <Button x:Name="BtnExit" Grid.Column="1" Content="Изход" Margin="20 0 10 0" Click="BtnExit_Click" />
+        </Grid>
+        
     </Grid>
 </Window>

@@ -54,6 +54,10 @@ namespace Utils
             s = s.ToUpper();
             for (int i = 0; i < l; i++)
             {
+                if ((r>10) && (s[i] >= 'A' - 10 + r))
+                    throw new FormatException();
+                if((r<10) &&(s[i]-'0' >= r))
+                    throw new FormatException();
                 if (s[i] >= 'A')
                     n = n + (s[i] - 'A' + 10) * fastPow(r, l - i - 1);
                 else
