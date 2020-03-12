@@ -67,7 +67,7 @@ namespace Test
             if ((bool)radioB.IsChecked && answers[currQuestion] == "B") { points++; }
             if ((bool)radioC.IsChecked && answers[currQuestion] == "C") { points++; }
             if ((bool)radioD.IsChecked && answers[currQuestion] == "D") { points++; }
-            w.WriteLine($"{currQuestion+1}\t{ans}\t\t\t{answers[currQuestion]}");
+            w.WriteLine($"{currQuestion + 1}\t\t{ans}\t\t\t{answers[currQuestion]}");
             if (currQuestion == numQuestions - 1)
             {
                 buttonAction.Content = "Край на теста";
