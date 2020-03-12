@@ -1,4 +1,8 @@
-﻿namespace Test.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CreateDatabase.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
     public class Question

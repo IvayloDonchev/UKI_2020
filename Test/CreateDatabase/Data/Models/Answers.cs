@@ -1,4 +1,4 @@
-﻿namespace Test.Models
+﻿namespace CreateDatabase.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
     public class Answers
@@ -11,6 +11,6 @@
         public string AnswerB { get; set; }
         public string AnswerC { get; set; }
         public string AnswerD { get; set; }
-        public char RightAnswer { get; set; }
+        public string RightAnswer { get; set; }
     }
 }

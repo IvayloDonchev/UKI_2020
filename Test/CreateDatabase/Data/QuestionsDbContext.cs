@@ -1,16 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
-namespace Test
+using Microsoft.EntityFrameworkCore;
+namespace CreateDatabase.Data
 {
     using Models;
     public class QuestionsDbContext : DbContext
     {
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answers> Answers { get; set; }
-        
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -21,7 +20,8 @@ namespace Test
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
+
         }
     }
+
 }
