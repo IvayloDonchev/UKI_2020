@@ -109,7 +109,7 @@ namespace Test
             richText.Document.Blocks.Clear();
             richText.Document.Blocks.Add(new Paragraph(new Run(questions[currQuestion])));
             labelQuestionsLeft.Content = "Оставащи въпроси: " + (numQuestions - currQuestion -1).ToString();
-            w.WriteLine("№\tТвоят отговор\tВерен отговор");
+            w.WriteLine("№\tТвоят отговор\t\tВерен отговор");
             labelQuestionNumber.Content = "Въпрос " + (currQuestion + 1).ToString();
             time = numQuestions * 10; //времето в секунди
         }
