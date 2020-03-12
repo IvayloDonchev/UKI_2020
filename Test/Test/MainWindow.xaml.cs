@@ -79,7 +79,7 @@ namespace Test
             richText.Document.Blocks.Clear();
             richText.Document.Blocks.Add(new Paragraph(new Run(questions[currQuestion])));
             labelQuestionNumber.Content = "Въпрос " + (currQuestion + 1).ToString();
-            labelQuestionsLeft.Content = "Оставащи въпроси: " + (numQuestions - currQuestion -1).ToString();
+            labelQuestionsLeft.Content = "Оставащи въпроси: " + (numQuestions - currQuestion - 1).ToString();
             radioA.IsChecked = false;
             radioB.IsChecked = false;
             radioC.IsChecked = false;

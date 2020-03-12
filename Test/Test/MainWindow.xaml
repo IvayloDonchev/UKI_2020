@@ -5,28 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Тест" Height="600" Width="600">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="181*"/>
-            <ColumnDefinition Width="411*"/>
-        </Grid.ColumnDefinitions>
-        <Label x:Name="labelTimeLeft" Content="Оставащо време:" HorizontalAlignment="Left" Margin="30,26,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="255"/>
-        <Label x:Name="labelQuestionsLeft" Content="Оставащи въпроси:" HorizontalAlignment="Left" Margin="151,26,0,0" VerticalAlignment="Top" Grid.Column="1" Width="155"/>
-        <RadioButton x:Name="radioA" Content="a" HorizontalAlignment="Left" Margin="35,234,0,0" VerticalAlignment="Top" GroupName="radioGroup"/>
-        <RadioButton x:Name="radioC" Content="в" HorizontalAlignment="Left" Margin="11,234,0,0" VerticalAlignment="Top" GroupName="radioGroup" Grid.Column="1"/>
-        <RadioButton x:Name="radioB" Content="б" HorizontalAlignment="Left" Margin="35,265,0,0" VerticalAlignment="Top" GroupName="radioGroup"/>
-        <RadioButton x:Name="radioD" Content="г" HorizontalAlignment="Left" Margin="11,268,0,0" VerticalAlignment="Top" GroupName="radioGroup" Grid.Column="1"/>
-        <RichTextBox x:Name="richText" HorizontalAlignment="Left" Height="101" Margin="30,94,0,0" VerticalAlignment="Top" Width="508" RenderTransformOrigin="-0.6,0.24" Grid.ColumnSpan="2">
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text=""/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
-        <Label x:Name="labelQuestionNumber" Content="Въпрос № " HorizontalAlignment="Left" Margin="30,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.289,-0.154"/>
-        <Label Content="Верен отговор" HorizontalAlignment="Left" Margin="35,203,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.684,0.538"/>
-        <Button x:Name="buttonAction" Content="Следващ въпрос" Grid.Column="1" HorizontalAlignment="Left" Margin="196,229,0,0" VerticalAlignment="Top" Width="161" Click="ButtonAction_Click"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label x:Name="labelTimeLeft" Content="Оставащо време:" Margin="10 0 10 0"/>
+            <Label x:Name="labelQuestionsLeft" Content="Оставащи въпроси:" Margin="10 0 10 0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label x:Name="labelQuestionNumber" Content="Въпрос № " />
+            <RichTextBox x:Name="richText" Margin="10,0,10,0">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text=""/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Stretch">
+            <TextBlock Text="Верен отговор" Margin="10 0 0 10"/>
+            <RadioButton x:Name="radioA" Content="a" GroupName="radioGroup" Margin="20 0 0 10"/>
+            <RadioButton x:Name="radioB" Content="б" GroupName="radioGroup" Margin="20 0 0 10"/>
+            <RadioButton x:Name="radioC" Content="в" GroupName="radioGroup" Margin="20 0 0 10"/>
+            <RadioButton x:Name="radioD" Content="г" GroupName="radioGroup" Margin="20 0 0 10"/>
+        </StackPanel>
+        <Button Grid.Row="3" x:Name="buttonAction" Content="Следващ въпрос" Margin="20 0 20 10" Click="ButtonAction_Click"/>
     </Grid>
 </Window>
