@@ -31,13 +31,24 @@ namespace Test
 
         private void ButtonAction_Click(object sender, RoutedEventArgs e)
         {
+            if ((string)buttonAction.Content == "Изход")
+            {
+                Close();
+                return;
+            }
             if ((string)buttonAction.Content == "Виж резултата си")
             {
-                buttonAction.IsEnabled = false;
                 StreamReader r = new StreamReader("results.txt", Encoding.UTF8);
                 richText.Document.Blocks.Clear();
                 richText.Document.Blocks.Add(new Paragraph(new Run(r.ReadToEnd())));
                 r.Close();
+                labelQuestionNumber.Content = "Резултати: ";
+                radioA.Visibility = Visibility.Hidden;
+                radioB.Visibility = Visibility.Hidden;
+                radioC.Visibility = Visibility.Hidden;
+                radioD.Visibility = Visibility.Hidden;
+                blockInfo.Visibility = Visibility.Hidden;
+                buttonAction.Content = "Изход";
                 return;
             }
             if ((string)buttonAction.Content == "Край на теста")
@@ -53,7 +64,7 @@ namespace Test
                 !(bool)radioC.IsChecked &&
                 !(bool)radioD.IsChecked)
             {
-                MessageBox.Show("Маркирай отговор!");
+                _ = MessageBox.Show("Маркирай отговор!", "Грешка!", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             string ans = "";

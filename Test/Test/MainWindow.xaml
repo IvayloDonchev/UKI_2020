@@ -19,7 +19,7 @@
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Label x:Name="labelQuestionNumber" Content="Въпрос № " />
-            <RichTextBox x:Name="richText" Margin="10,0,10,0">
+            <RichTextBox x:Name="richText" Margin="10,0,10,0" VerticalContentAlignment="Center">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
@@ -28,7 +28,7 @@
             </RichTextBox>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Stretch">
-            <TextBlock Text="Верен отговор" Margin="10 0 0 10"/>
+            <TextBlock x:Name="blockInfo" Text="Верен отговор" Margin="10 0 0 10"/>
             <RadioButton x:Name="radioA" Content="a" GroupName="radioGroup" Margin="20 0 0 10"/>
             <RadioButton x:Name="radioB" Content="б" GroupName="radioGroup" Margin="20 0 0 10"/>
             <RadioButton x:Name="radioC" Content="в" GroupName="radioGroup" Margin="20 0 0 10"/>
