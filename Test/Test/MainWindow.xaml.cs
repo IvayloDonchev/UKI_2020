@@ -34,7 +34,7 @@ namespace Test
             if ((string)buttonAction.Content == "Виж резултата си")
             {
                 buttonAction.IsEnabled = false;
-                StreamReader r = new StreamReader("results.txt", Encoding.GetEncoding("windows-1251"));
+                StreamReader r = new StreamReader("results.txt", Encoding.UTF8);
                 richText.Document.Blocks.Clear();
                 richText.Document.Blocks.Add(new Paragraph(new Run(r.ReadToEnd())));
                 r.Close();
@@ -65,7 +65,7 @@ namespace Test
             if ((bool)radioB.IsChecked && answers[currQuestion] == "B") { points++; }
             if ((bool)radioC.IsChecked && answers[currQuestion] == "C") { points++; }
             if ((bool)radioD.IsChecked && answers[currQuestion] == "D") { points++; }
-            w.WriteLine($"{currQuestion}\t{ans}\t\t\t{answers[currQuestion]}");
+            w.WriteLine($"{currQuestion+1}\t{ans}\t\t\t{answers[currQuestion]}");
             if (currQuestion == numQuestions - 1)
             {
                 buttonAction.Content = "Край на теста";
@@ -78,8 +78,8 @@ namespace Test
             currQuestion++;
             richText.Document.Blocks.Clear();
             richText.Document.Blocks.Add(new Paragraph(new Run(questions[currQuestion])));
-            labelQuestionNumber.Content = "Въпрос " + currQuestion.ToString();
-            labelQuestionsLeft.Content = "Оставащи въпроси: " + (numQuestions - currQuestion).ToString();
+            labelQuestionNumber.Content = "Въпрос " + (currQuestion + 1).ToString();
+            labelQuestionsLeft.Content = "Оставащи въпроси: " + (numQuestions - currQuestion -1).ToString();
             radioA.IsChecked = false;
             radioB.IsChecked = false;
             radioC.IsChecked = false;
@@ -106,9 +106,9 @@ namespace Test
             currQuestion = 0;
             richText.Document.Blocks.Clear();
             richText.Document.Blocks.Add(new Paragraph(new Run(questions[currQuestion])));
-            labelQuestionsLeft.Content = "Оставащи въпроси: " + (numQuestions - currQuestion).ToString();
+            labelQuestionsLeft.Content = "Оставащи въпроси: " + (numQuestions - currQuestion -1).ToString();
             w.WriteLine("№\tТвоят отговор\tВерен отговор");
-            labelQuestionNumber.Content = "Въпрос " + currQuestion;
+            labelQuestionNumber.Content = "Въпрос " + (currQuestion + 1).ToString();
             time = numQuestions * 10; //времето в секунди
         }
         private void timer1_Tick(object sender, EventArgs e)
