@@ -32,14 +32,10 @@ namespace Test
             {
                 StreamReader r = new StreamReader("results.txt", Encoding.UTF8);
                 richText.Document.Blocks.Clear();
+                richText.Visibility = Visibility.Visible;
                 richText.Document.Blocks.Add(new Paragraph(new Run(r.ReadToEnd())));
                 r.Close();
                 labelQuestionNumber.Content = "Резултати: ";
-                radioA.Visibility = Visibility.Hidden;
-                radioB.Visibility = Visibility.Hidden;
-                radioC.Visibility = Visibility.Hidden;
-                radioD.Visibility = Visibility.Hidden;
-                blockInfo.Visibility = Visibility.Hidden;
                 buttonAction.Content = "Изход";
                 return;
             }
@@ -47,8 +43,15 @@ namespace Test
             {
                 timer.Stop();
                 labelQuestionsLeft.Content = $"Брой точки: {points.ToString()}";
+                labelQuestionNumber.Content = "";
+                richText.Visibility = Visibility.Hidden;
                 w.Close();
                 buttonAction.Content = "Виж резултата си";
+                radioA.Visibility = Visibility.Hidden;
+                radioB.Visibility = Visibility.Hidden;
+                radioC.Visibility = Visibility.Hidden;
+                radioD.Visibility = Visibility.Hidden;
+                blockInfo.Visibility = Visibility.Hidden;
                 return;
             }
             if (!(bool)radioA.IsChecked &&
@@ -97,10 +100,12 @@ namespace Test
         public MainWindow()
         {
             InitializeComponent();
-            using var db = new QuestionsDbContext();
-            db.Database.EnsureCreated();
-            questions = db.Questions.Select(q => q.Content).ToList();
-            answers = db.Questions.Select(q => q.Answers).ToList();
+            using (var db = new QuestionsDbContext())
+            {
+                _ = db.Database.EnsureCreated();
+                questions = db.Questions.Select(q => q.Content).ToList();
+                answers = db.Questions.Select(q => q.Answers).ToList();
+            }
             numQuestions = questions.Count;
             timer.Tick += new EventHandler(this.timer1_Tick);
             timer.Interval = new TimeSpan(0, 0, 1);
