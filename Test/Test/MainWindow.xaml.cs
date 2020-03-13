@@ -10,14 +10,15 @@ using System.Windows.Threading;
 namespace Test
 {
     using CreateDatabase.Data;
+    using CreateDatabase.Data.Models;
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
-        List<string> answers;
         List<string> questions;
+        List<Answers> answers;
         int numQuestions, currQuestion, points = 0, time;
 
         private void ButtonAction_Click(object sender, RoutedEventArgs e)
@@ -63,11 +64,11 @@ namespace Test
             if ((bool)radioB.IsChecked) { ans = "B"; }
             if ((bool)radioC.IsChecked) { ans = "C"; }
             if ((bool)radioD.IsChecked) { ans = "D"; }
-            if ((bool)radioA.IsChecked && answers[currQuestion] == "A") { points++; }
-            if ((bool)radioB.IsChecked && answers[currQuestion] == "B") { points++; }
-            if ((bool)radioC.IsChecked && answers[currQuestion] == "C") { points++; }
-            if ((bool)radioD.IsChecked && answers[currQuestion] == "D") { points++; }
-            w.WriteLine($"{currQuestion + 1}\t\t{ans}\t\t\t{answers[currQuestion]}");
+            if ((bool)radioA.IsChecked && answers[currQuestion].RightAnswer == "A") { points++; }
+            if ((bool)radioB.IsChecked && answers[currQuestion].RightAnswer == "B") { points++; }
+            if ((bool)radioC.IsChecked && answers[currQuestion].RightAnswer == "C") { points++; }
+            if ((bool)radioD.IsChecked && answers[currQuestion].RightAnswer == "D") { points++; }
+            w.WriteLine($"{currQuestion + 1}\t\t{ans}\t\t\t{answers[currQuestion].RightAnswer}");
             if (currQuestion == numQuestions - 1)
             {
                 buttonAction.Content = "Край на теста";
@@ -82,6 +83,10 @@ namespace Test
             richText.Document.Blocks.Add(new Paragraph(new Run(questions[currQuestion])));
             labelQuestionNumber.Content = "Въпрос " + (currQuestion + 1).ToString();
             labelQuestionsLeft.Content = "Оставащи въпроси: " + (numQuestions - currQuestion - 1).ToString();
+            radioA.Content = answers[currQuestion].AnswerA;
+            radioB.Content = answers[currQuestion].AnswerB;
+            radioC.Content = answers[currQuestion].AnswerC;
+            radioD.Content = answers[currQuestion].AnswerD;
             radioA.IsChecked = false;
             radioB.IsChecked = false;
             radioC.IsChecked = false;
@@ -94,20 +99,19 @@ namespace Test
             InitializeComponent();
             using var db = new QuestionsDbContext();
             db.Database.EnsureCreated();
-            questions = db.Questions.Select(q => q.Content + "\n a) " +
-                                                 q.Answers.AnswerA + "\n б) " +
-                                                 q.Answers.AnswerB + "\n в) " +
-                                                 q.Answers.AnswerC + "\n г) " +
-                                                 q.Answers.AnswerD).ToList();
-            answers = db.Questions.Select(q => q.Answers.RightAnswer).ToList();
+            questions = db.Questions.Select(q => q.Content).ToList();
+            answers = db.Questions.Select(q => q.Answers).ToList();
             numQuestions = questions.Count;
-
             timer.Tick += new EventHandler(this.timer1_Tick);
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Start();
             currQuestion = 0;
             richText.Document.Blocks.Clear();
             richText.Document.Blocks.Add(new Paragraph(new Run(questions[currQuestion])));
+            radioA.Content = answers[currQuestion].AnswerA;
+            radioB.Content = answers[currQuestion].AnswerB;
+            radioC.Content = answers[currQuestion].AnswerC;
+            radioD.Content = answers[currQuestion].AnswerD;
             labelQuestionsLeft.Content = "Оставащи въпроси: " + (numQuestions - currQuestion -1).ToString();
             w.WriteLine("№\tТвоят отговор\t\tВерен отговор");
             labelQuestionNumber.Content = "Въпрос " + (currQuestion + 1).ToString();
