@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace DataGridControl.Data.Models
+namespace DataGridControl.Models
 {
     public partial class QuestionsForTestContext : DbContext
     {

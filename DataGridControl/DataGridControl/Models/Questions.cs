@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DataGridControl.Data.Models
+﻿namespace DataGridControl.Models
 {
     public partial class Questions
     {
