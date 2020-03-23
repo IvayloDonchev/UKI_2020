@@ -25,6 +25,7 @@ namespace Utils
         }
         public static string FromDec(int n, int r)  // От десетична в r-ична
         {
+            if (n == 0) return "0";
             string sign = n >= 0 ? "" : "-";
             StringBuilder s = new StringBuilder();
             int d;
@@ -43,6 +44,7 @@ namespace Utils
         }
         public static int ToDec(string s, int r)    // От r-ична в десетична
         {
+            if (s == "") return 0;
             int n = 0;
             int sign = 1;
             if (s[0] == '-')
