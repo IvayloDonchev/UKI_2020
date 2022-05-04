@@ -15,7 +15,7 @@ namespace CreateDatabase.Data
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder
-                    .UseSqlServer(@"Server=DELL_IT\SQLEXPRESS; Database=QuestionsForTest; Integrated Security=True");
+                    .UseSqlServer(@"Server=localhost\SQLEXPRESS; Database=QuestionsForTest; Integrated Security=True");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
