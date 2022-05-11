@@ -34,6 +34,6 @@
             <RadioButton x:Name="radioC" Content="в" GroupName="radioGroup" Margin="20 0 0 10"/>
             <RadioButton x:Name="radioD" Content="г" GroupName="radioGroup" Margin="20 0 0 10"/>
         </StackPanel>
-        <Button Grid.Row="3" x:Name="buttonAction" Content="Следващ въпрос" Margin="20 0 20 10" Click="ButtonAction_Click"/>
+        <Button Grid.Row="3" x:Name="buttonAction" Content="Следващ въпрос" Margin="20" Click="ButtonAction_Click"/>
     </Grid>
 </Window>

@@ -17,10 +17,10 @@ namespace CreateDatabase
                 Content = "Коя е столицата на България?",
                 Answers = new Answers
                 {
-                    AnswerA = "Москва",
+                    AnswerA = "Киев",
                     AnswerB = "София",
-                    AnswerC = "Пловдив",
-                    AnswerD = "Варна",
+                    AnswerC = "Вашингтон",
+                    AnswerD = "Лондон",
                     RightAnswer = "B"
                 }
             };
