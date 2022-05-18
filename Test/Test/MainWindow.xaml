@@ -13,13 +13,15 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Label x:Name="labelTimeLeft" Content="Оставащо време:" Margin="10 0 10 0"/>
-            <Label x:Name="labelQuestionsLeft" Content="Оставащи въпроси:" Margin="10 0 10 0"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" 
+                    HorizontalAlignment="Center">
+            <Label x:Name="labelTimeLeft" Content="Оставащо време:" Margin="10 0"/>
+            <Label x:Name="labelQuestionsLeft" Content="Оставащи въпроси:" Margin="10 0"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" 
+                    HorizontalAlignment="Center">
             <Label x:Name="labelQuestionNumber" Content="Въпрос № " />
-            <RichTextBox x:Name="richText" Margin="10,0,10,0" VerticalContentAlignment="Center">
+            <RichTextBox x:Name="richText" Margin="10,0" VerticalContentAlignment="Center">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
@@ -34,6 +36,7 @@
             <RadioButton x:Name="radioC" Content="в" GroupName="radioGroup" Margin="20 0 0 10"/>
             <RadioButton x:Name="radioD" Content="г" GroupName="radioGroup" Margin="20 0 0 10"/>
         </StackPanel>
-        <Button Grid.Row="3" x:Name="buttonAction" Content="Следващ въпрос" Margin="20" Click="ButtonAction_Click"/>
+        <Button Grid.Row="3" x:Name="buttonAction" Content="Следващ въпрос" Margin="20" 
+                Click="ButtonAction_Click"/>
     </Grid>
 </Window>
